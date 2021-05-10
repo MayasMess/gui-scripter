@@ -8,7 +8,7 @@ class BackEnd(FrontEnd):
         super().__init__(inputs, main_script)
 
     def complete_progress_bar(self):
-        for x in range(1, 101):
+        for x in range(1, 51):
             time.sleep(0.1)
-            self.progress_bar['value'] = x
+            self.progress_bar['value'] = 2*x
             self.progress_bar.update()
