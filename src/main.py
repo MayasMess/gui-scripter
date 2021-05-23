@@ -1,9 +1,9 @@
-from backend import BackEnd
+from src.backend import BackEnd
 
 
 class Main(BackEnd):
     def __init__(self):
-        inputs = {"Quantity", "Salary", "Others"}
+        inputs = {"Quantity"}
         super().__init__(inputs, self.main_script)
 
     def main_script(self):

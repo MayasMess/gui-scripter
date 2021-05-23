@@ -1,6 +1,6 @@
 import time
 
-from frontend import FrontEnd
+from src.frontend import FrontEnd
 
 
 class BackEnd(FrontEnd):

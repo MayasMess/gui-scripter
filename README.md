@@ -1,4 +1,4 @@
 Simple GUI for scripts 🤖 !
 -
 
-![image](static/readme_img.PNG)
+![image](src/static/readme_img.PNG)
