@@ -1,4 +1,5 @@
-import os
+import base64
+import io
 from abc import abstractmethod
 from functools import partial
 from pathlib import Path
@@ -8,6 +9,7 @@ from typing import Optional
 from ttkthemes import ThemedTk
 from PIL import ImageTk, Image
 import tkinter as tk
+from .images import rob, rob_icon
 
 
 def entry(name: str) -> dict:
@@ -26,7 +28,7 @@ def drop_box(name: str, values: list) -> dict:
 
 
 class Gui:
-    _SRC_PATH = Path(__file__).resolve().parent
+    _SRC_PATH = Path(__file__).resolve().parent.parent
     inputs: list = None
     title: str = None
     progress_bar: Optional[ttk.Progressbar] = True
@@ -50,12 +52,12 @@ class Gui:
         else:
             self.root.title(self.title)
 
-        self.icon = ImageTk.PhotoImage(Image.open(os.path.join(self._SRC_PATH, 'static/rob_icon.png')))
+        self.icon = ImageTk.PhotoImage(Image.open(io.BytesIO(base64.b64decode(rob_icon))))
         self.root.iconphoto(False, self.icon)
 
         self.app_frame = ttk.Frame(self.root, width=self.app_width, height=self.app_height)
 
-        self.main_image = ImageTk.PhotoImage(Image.open(os.path.join(self._SRC_PATH, 'static/rob.png')))
+        self.main_image = ImageTk.PhotoImage(Image.open(io.BytesIO(base64.b64decode(rob))))
         self.panel = tk.Label(self.app_frame, image=self.main_image, bg='#464646')
 
         self.inputs_dict = {}
@@ -104,3 +106,5 @@ class Gui:
 
     def get(self, entry):
         return self.inputs_dict[entry].get()
+
+
