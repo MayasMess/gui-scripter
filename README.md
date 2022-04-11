@@ -25,5 +25,5 @@ class MyFirstApplication(Gui):
     def script(self):
         for x in range(1, 51):
             self.set_progress_bar(x*2)
-        print(f"Yo, my name is {self.get('name')} and i'm {self.get('age')} years old")
+        print(f"Yo, my name is {self.get('name')} and I'm {self.get('age')} years old")
 ```
