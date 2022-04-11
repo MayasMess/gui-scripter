@@ -1,6 +1,6 @@
 Simple GUI for scripts 🤖 !
 -
-![image](img/app1.PNG)
+![image](img/app1.png)
 
 Installation:
 -
